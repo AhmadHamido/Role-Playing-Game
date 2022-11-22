@@ -1,15 +1,15 @@
 import { getDiceRollArray, getDicePlaceholderHtml } from './utils.js'
 
 function Character(data) {
-    Object.assign(this, data)
+    Object.assign(this, data);
 
-    this.diceArray = getDicePlaceholderHtml(this.diceCount)
+    this.diceArray = getDicePlaceholderHtml(this.diceCount);
 
     this.getDiceHtml = function () {
         this.currentDiceScore = getDiceRollArray(this.diceCount);
         this.diceArray = this.currentDiceScore.map(function(num){
             return `<div class="dice">${num}</div>`
-            }).join("")
+            }).join("");
     }
     
     this.takeDamage = function(attackScoreArray){
@@ -19,6 +19,7 @@ function Character(data) {
         
         this.health -= totalAttackScore;
         if (this.health <= 0) {
+            this.dead = true;
             this.health = 0;
         }
     }
@@ -38,4 +39,4 @@ function Character(data) {
     }
 }
 
-export default Character
+export default Character;
