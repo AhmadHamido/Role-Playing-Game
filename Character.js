@@ -7,13 +7,12 @@ function Character(data) {
 
     this.getDiceHtml = function () {
         this.currentDiceScore = getDiceRollArray(this.diceCount);
-        this.diceArray = this.currentDiceScore.map(function(num){
-            return `<div class="dice">${num}</div>`
-            }).join("");
+        this.diceArray = this.currentDiceScore.map(num => 
+            `<div class="dice">${num}</div>`).join("");
     }
     
-    this.takeDamage = function(attackScoreArray){
-        const totalAttackScore = attackScoreArray.reduce(function(totalScore, currentScore) {
+    this.takeDamage = function (attackScoreArray) {
+        const totalAttackScore = attackScoreArray.reduce( (totalScore, currentScore) => {
             return totalScore + currentScore;
         });
         
