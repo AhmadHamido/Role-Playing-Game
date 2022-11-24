@@ -19,7 +19,7 @@ main {
 }
 
 .character-card {
-    height:14rem;
+    height:15.25rem;
     margin-top: .5rem;
     width:94vw;
     max-width: 230px;
@@ -158,7 +158,7 @@ button:focus {
 
     .character-card {
         border: 0.2rem solid #000721;
-        height:26rem;
+        height:27rem;
         width:37vw;
     }
 

@@ -2,4 +2,7 @@ const getDiceRollArray = diceCount => new Array(diceCount).fill(0).map( () => Ma
 
 const getDicePlaceholderHtml = diceCount => new Array(diceCount).fill(0).map( () => `<div class="placeholder-dice"></div>`).join("");
 
-export {getDiceRollArray, getDicePlaceholderHtml};
+const getPercentage = (remainingHealth, maximumHealth) => 
+    remainingHealth * 100 / maximumHealth;
+
+export {getDiceRollArray, getDicePlaceholderHtml, getPercentage};
