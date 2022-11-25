@@ -13,12 +13,20 @@ function attack() {
     monster.getDiceHtml();
     wizard.takeDamage(monster.currentDiceScore);
     monster.takeDamage(wizard.currentDiceScore);
+    render();
 
-    if (wizard.dead || monster.dead) {
+    if(wizard.dead){
         endGame();
     }
-
-    render()
+    else if(monster.dead){
+        if(monstersArray.length > 0){
+            monster = getNewMonster();
+            render();
+        }
+        else{
+            endGame();
+        }
+    };
 }
 
 function endGame() {
